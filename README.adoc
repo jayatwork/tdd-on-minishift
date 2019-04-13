@@ -1,0 +1,43 @@
+= TEST DRIVEN DEVELOPMENT on MINISHIFT
+Welcome to my repo that houses reference doc for all things TDD on Openshift. To get started you will need to satisfy the following pre-reqs:
+
+* https://www.okd.io/minishift[Minishifty]
+* https://www.okd.io/download.html#oc-platforms[OC Client]
+* https://www.virtualbox.org[Oracle Virtualbox]
+
+
+=== Please FORK to retrieve the Source Code
+
+Simply copy the https://github.com/jayatwork/tdd-on-minishift[GitHub repository URL] and pass it to the `git clone` command:
+
+$ git clone https://github.com/jayatwork/tdd-on-minishift
+
+ Next, switch to the project directory:
+
+  $ cd tdd-on-minishift
+
+
+=== Start minishift on Windows 7 (on oracle Virtual box)
+
+ Navigate to install directory for minishift
+
+  $ ./minishift start --vm-driver virtualbox
+
+ Might be necessary to delete cache if experiencing VM startup issue
+
+  $ ./minishift delete --clear-cache
+
+ Upon sucessful startup you should see something this this:
+
+  The server is accessible via web console at:
+      https://<host>:8443/console
+
+      You are logged in as:
+          User:     developer
+	  Password: <any value>
+
+	  To login as administrator:
+	  oc login -u system:admin
+
+
+
