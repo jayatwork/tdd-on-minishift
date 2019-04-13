@@ -1,10 +1,10 @@
 package racer
 
 import (
-  "net/http"
-  "net/http/httptest"
-  "testing"
-  "time"
+	"net/http"
+	"net/http/httptest"
+	"testing"
+	"time"
 )
 
 func TestRacer(t *testing.T) {
@@ -22,7 +22,7 @@ func TestRacer(t *testing.T) {
 	got := Racer(slowURL, fastURL)
 
 	if got != want {
-		t.Errorf("We currently have '%s', want '%s'", got, want)
+		t.Errorf("got '%s', want '%s'", got, want)
 	}
 }
 
