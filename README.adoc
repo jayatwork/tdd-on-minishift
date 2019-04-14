@@ -39,5 +39,12 @@ $ git clone https://github.com/jayatwork/tdd-on-minishift
 	  To login as administrator:
 	  oc login -u system:admin
 
+=== Deploy onto MINISHIFT
+
+ Access console at url given on minishift startup 
+
+ Copy login command and paste into termainl
+ 
+  oc login https://<your_host>:8443 --token=<some_token_value>
 
 
