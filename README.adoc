@@ -46,5 +46,27 @@ $ git clone https://github.com/jayatwork/tdd-on-minishift
  Copy login command and paste into termainl
  
   oc login https://<your_host>:8443 --token=<some_token_value>
+  
+== Commands to deploy on Openshift
+* We must first create a ** Golang builder (base) image** pre-install, this is accomplished thru https://github.com/jayatwork/tdd-on-minishift/Dockerfile[dockerfile]
+**NOTE**: required to do this as golang images require certain user privileges
+
+----
+$ oc new-app .minishift/templates/golang-builder.json -p SOURCE_REPOSITORY_URL=https://github.com/jayatwork/tdd-on-minishift.git
+----
+* A build will be started automatically. It might take some time.
+You can run the command below to watch for builds:
+
+----
+$ oc get builds -w
+----
+* Once the build is running, follow the build logs:
+
+----
+$ oc logs -f bc/tdd-on-minishift
+----
+* Resources created in namespace include those below:
+
+----
 
 
